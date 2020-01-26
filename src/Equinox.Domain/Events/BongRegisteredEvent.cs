@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Equinox.Domain.Core.Models;
+using Equinox.Domain.Core.Events;
 
-namespace Equinox.Domain.Models
+namespace Equinox.Domain.Events
 {
-    public class Bong : Entity
+    public class BongRegisteredEvent : Event
     {
-    
-        // Empty constructor for EF
-        protected Bong() { }
-
-        public Bong(Guid id, string name, string referenceNo, DateTime arrivingInStock)
+        public BongRegisteredEvent(Guid id, string name, string referenceNo, DateTime arrivingInStock)
         {
             Id = id;
             Name = name;
             ReferenceNo = referenceNo;
             ArrivingInStock = arrivingInStock;
+            AggregateId = id;
         }
+        public Guid Id { get; set; }
 
         public string Name { get; private set; }
 

@@ -40,6 +40,8 @@ namespace Equinox.UI.Web.Extensions
             {
                 options.AddPolicy("CanWriteCustomerData", policy => policy.Requirements.Add(new ClaimRequirement("Customers", "Write")));
                 options.AddPolicy("CanRemoveCustomerData", policy => policy.Requirements.Add(new ClaimRequirement("Customers", "Remove")));
+                options.AddPolicy("CanWriteBongData", policy => policy.Requirements.Add(new ClaimRequirement("Bongs", "Write")));
+                options.AddPolicy("CanRemoveBongData", policy => policy.Requirements.Add(new ClaimRequirement("Bongs", "Remove")));
             });
         }
     }

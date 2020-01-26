@@ -35,6 +35,7 @@ namespace Equinox.Infra.CrossCutting.IoC
 
             // Application
             services.AddScoped<ICustomerAppService, CustomerAppService>();
+            services.AddScoped<IBongAppService, BongAppService>();
 
             // Domain - Events
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
@@ -42,13 +43,25 @@ namespace Equinox.Infra.CrossCutting.IoC
             services.AddScoped<INotificationHandler<CustomerUpdatedEvent>, CustomerEventHandler>();
             services.AddScoped<INotificationHandler<CustomerRemovedEvent>, CustomerEventHandler>();
 
+            services.AddScoped<INotificationHandler<BongRegisteredEvent>, BongEventHandler>();
+            services.AddScoped<INotificationHandler<BongUpdatedEvent>, BongEventHandler>();
+            services.AddScoped<INotificationHandler<BongRemovedEvent>, BongEventHandler>();
+
+
+
             // Domain - Commands
             services.AddScoped<IRequestHandler<RegisterNewCustomerCommand, bool>, CustomerCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateCustomerCommand, bool>, CustomerCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveCustomerCommand, bool>, CustomerCommandHandler>();
 
+            services.AddScoped<IRequestHandler<RegisterNewBongCommand, bool>, BongCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateBongCommand, bool>, BongCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveBongCommand, bool>, BongCommandHandler>();
+
+
             // Infra - Data
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IBongRepository, BongRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<EquinoxContext>();
 
