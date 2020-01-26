@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Equinox.Infra.Data.Migrations
 {
     [DbContext(typeof(EquinoxContext))]
-    [Migration("20200126144550_Add-Bong-Model")]
-    partial class AddBongModel
+    [Migration("20200126151546_Add-Bongus-Model")]
+    partial class AddBongusModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,10 +30,10 @@ namespace Equinox.Infra.Data.Migrations
                     b.Property<DateTime>("ArrivingInStock")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Category")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ReferenceNo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

@@ -16,7 +16,7 @@ namespace Equinox.Infra.Data.Mappings
                 .HasMaxLength(100)
                 .IsRequired();
 
-            builder.Property(c => c.Category)
+            builder.Property(c => c.ReferenceNo)
                 .HasColumnType("varchar(100)")
                 .HasMaxLength(100)
                 .IsRequired();   

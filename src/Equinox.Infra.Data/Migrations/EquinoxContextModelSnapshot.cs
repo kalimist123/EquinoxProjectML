@@ -28,10 +28,10 @@ namespace Equinox.Infra.Data.Migrations
                     b.Property<DateTime>("ArrivingInStock")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Category")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ReferenceNo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

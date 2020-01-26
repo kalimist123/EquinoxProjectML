@@ -11,16 +11,16 @@ namespace Equinox.Domain.Models
         // Empty constructor for EF
         protected Bong() { }
 
-        public Bong(string name, string category, DateTime arrivingInStock)
+        public Bong(string name, string referenceNo, DateTime arrivingInStock)
         {
             Name = name;
-            Category = category;
+            ReferenceNo = referenceNo;
             ArrivingInStock = arrivingInStock;
         }
 
         public string Name { get; private set; }
 
-        public string Category { get; private set; }
+        public string ReferenceNo { get; private set; }
 
         public DateTime ArrivingInStock { get; private set; }
     }

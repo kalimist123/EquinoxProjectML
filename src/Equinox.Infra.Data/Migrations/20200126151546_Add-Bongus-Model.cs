@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Equinox.Infra.Data.Migrations
 {
-    public partial class AddBongModel : Migration
+    public partial class AddBongusModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace Equinox.Infra.Data.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    Category = table.Column<string>(nullable: true),
+                    ReferenceNo = table.Column<string>(nullable: true),
                     ArrivingInStock = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
